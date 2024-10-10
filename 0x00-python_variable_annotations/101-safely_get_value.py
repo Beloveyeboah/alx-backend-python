@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
-
 """
-return values, add type annotations to the function
+iven the parameters and the return values, add
+type annotations to the function
 """
 
-from typing import TypeVar, Mapping, Optional
+
+from typing import TypeVar, Mapping, Any, Union, Optional
+
 
 T = TypeVar('T')
 
 
 def safely_get_value(
-    dct: Mapping,
-    key: T,
-    default: Optional[T] = None
-) -> Optional[T]:
+        dct: Mapping[Any, T],
+        key: Any,
+        default: Optional[T] = None) -> Union[T, None]:
     """
-    returns
+    returns a dictionary
     """
 
     if key in dct:

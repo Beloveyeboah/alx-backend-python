@@ -12,9 +12,9 @@ T = TypeVar('T')
 
 
 def safely_get_value(
-        dct: Mapping[Any, T],
+        dct: Mapping,
         key: Any,
-        default: Optional[T] = None) -> Union[T, None]:
+        default: Optional[T] = None) -> Union[Any, T]:
     """
     returns a dictionary
     """

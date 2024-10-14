@@ -6,7 +6,7 @@ you’ve written and write an async
 """
 
 
-from 0-basic_async_syntax import wait_random
+wait_random = __import__('0-basic_async_syntax').wait_random
 import asyncio
 import heapq
 

@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-
 """
-mport wait_random from the previous python file that
+Import wait_random from the previous python file that
 you’ve written and write an async
 """
 
+import asyncio
+from typing import List
 
 wait_random = __import__('0-basic_async_syntax').wait_random
-import asyncio
-import heapq
 
 
-async def wait_n(n: int, max_delay: int) -> list:
-    """ async """
+async def wait_n(n: int, max_delay: int) -> List[float]:
+    """ Execute wait_random n times with
+    max_delay and return list of delays """
 
     tasks = [wait_random(max_delay) for _ in range(n)]
     delays = await asyncio.gather(*tasks)
-    return list(heapq.merge(*[sorted([delay]) for delay in delays]))
+    return sorted(delays)
